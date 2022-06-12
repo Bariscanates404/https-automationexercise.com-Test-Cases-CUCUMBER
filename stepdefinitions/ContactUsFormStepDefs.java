@@ -24,10 +24,6 @@ public class ContactUsFormStepDefs {
     public void kullanici_name_email_subject_ve_message_bilgilerini_girer() {
     //    contactUsFormPage.nameText.sendKeys(Faker.instance().name().firstName());
     //    contactUsFormPage.emailBox.sendKeys(Faker.instance().internet().emailAddress());
-    //    contactUsFormPage.subjectBox.sendKeys("selamlar Batch44");
-    //    contactUsFormPage.messageBox.sendKeys("iyi ki bu projeyi sizlerle baslattim, ama sizsiz bitirdim :)");
-
-        // yukardaki 4 satiri farkli sekilde yazabiliriz
 
         Driver.waitAndSendText(contactUsFormPage.nameText,Faker.instance().name().firstName() );
         Driver.waitAndSendText(contactUsFormPage.emailBox,Faker.instance().internet().emailAddress());
@@ -38,13 +34,7 @@ public class ContactUsFormStepDefs {
 
     @Then("kullanici dosya sec butonundan dosya yukler")
     public void kullaniciDosyaSecButonundanDosyaYukler() {
-        // String pathOfImage = "src/test/resources/testData/testData.xlsx";
-        // yukarida oldugu gibi daha once kullandigimiz exceli kullanabiliriz
-
-        // String pathOfImage = System.getProperty("user.home")+"..dosya yolu...."
-        // yukarida oldugu gibi farkli olsun istersek bilgisayarda masaustunde herhengi bir dosyayi, dosya yolu gosterip cagirabiliriz
-
-        // ben proje icinde olmasini tercih ettigim icin src de testData package de datalarimi depoluyorum..
+       
 
         String pathOfImage = "C:\\Users\\asus\\IdeaProjects\\practiceCucumber_automationexercise\\src\\test\\resources\\testData\\imageUpload.jpg";
         Driver.waitAndSendText(contactUsFormPage.uploadFile, pathOfImage);
@@ -59,11 +49,7 @@ public class ContactUsFormStepDefs {
     public void kullanici_acilan_pencerede_ok_butonuna_tiklar() {
         Driver.wait(3);
         Driver.getDriver().switchTo().alert().accept(); //OK butonu -> accept
-        // sitede burada fail veriyor, alerti kabul etmiyor..
-        // ancak driver class da maximize yoruma alinirsa (70.satir); pass oluyor OK butonuna basiyor,
-        // driver maximize iken alerti maximize etmeye calisiyor, o yuzden fail oluyor..
-        // ama her soru icin degistirelemeyeceginden buna gerek yoktur, sitede bug vardir demek daha mantikli..
-
+ 
     }
 
     @Then("kullanici 'Success! Your details have been submitted successfully.'mesajini test eder")
