@@ -46,7 +46,7 @@ public class LoginStepDefs {
     public void kullanici_logout_butonuna_basar() {
         loginPage.logoutButton.click();
 
-    }
+    } 
 
     @Then("kullanici dogru email {string} ve sifreyi {string} girer")
     public void kullaniciDogruEmailVeSifreyiGirer(String email, String psw) {
